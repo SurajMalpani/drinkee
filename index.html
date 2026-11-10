@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drinkee — What Should I Drink?</title>
+  <meta name="description" content="Drinkee recommends cocktails from what's behind your bar, the weather and your mood." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <a href="index.html" class="brand" title="Start over"><img src="logo.jpg" alt="Drinkee" width="640" height="343" /></a>
+    <div class="hero-text">
+      <h1>What Should I Drink?</h1>
+      <p>Tell us what's behind your bar, what it's like outside, and how you're feeling.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <form id="prefs" class="panel" autocomplete="off">
+      <section class="field">
+        <label for="ingredient-input">Ingredients you have</label>
+        <div class="chip-input" id="chip-box">
+          <ul id="chips" class="chips"></ul>
+          <input id="ingredient-input" type="text" placeholder="e.g. gin, lime, mint — press Enter" list="ingredient-list" />
+          <datalist id="ingredient-list"></datalist>
+        </div>
+        <div class="quick-add">
+          <span>Quick add:</span>
+          <div id="quick-add"></div>
+        </div>
+      </section>
+
+      <button type="button" id="surprise" class="surprise">🎲 Surprise me</button>
+      <p class="hint center">Add one or two ingredients (or none) and get five picks, nudged by the options below.</p>
+
+      <div class="divider"><span>or fine-tune</span></div>
+      <p class="hint">Each choice sets smart defaults for the ones below it. Change any to override.</p>
+
+      <section class="field">
+        <label for="season" class="label">Season</label>
+        <select id="season">
+          <option value="spring">🌸 Spring</option>
+          <option value="summer">☀️ Summer</option>
+          <option value="autumn">🍂 Autumn</option>
+          <option value="winter">❄️ Winter</option>
+        </select>
+      </section>
+
+      <section class="field">
+        <div class="row">
+          <label for="weather" class="label">Weather</label>
+          <button type="button" id="locate" class="link-btn">📍 Use mine</button>
+        </div>
+        <select id="weather">
+          <option value="scorching">🥵 Scorching</option>
+          <option value="sunny">😎 Sunny &amp; warm</option>
+          <option value="mild">🌤️ Mild</option>
+          <option value="cool">🍃 Cool &amp; breezy</option>
+          <option value="rainy">🌧️ Rainy</option>
+          <option value="cold">🥶 Cold</option>
+        </select>
+        <p id="locate-status" class="hint"></p>
+      </section>
+
+      <section class="field">
+        <span class="label">Flavors</span>
+        <div class="toggles" id="flavors"></div>
+      </section>
+
+      <section class="field">
+        <span class="label">Mood</span>
+        <div class="toggles" id="moods"></div>
+      </section>
+
+      <section class="field">
+        <span class="label">Strength</span>
+        <div class="toggles">
+          <label><input type="radio" name="strength" value="any" checked /> Any</label>
+          <label><input type="radio" name="strength" value="zero" /> Zero-proof</label>
+          <label><input type="radio" name="strength" value="easy" /> Easy</label>
+          <label><input type="radio" name="strength" value="strong" /> Strong</label>
+        </div>
+      </section>
+
+      <button type="submit" class="primary">Mix me something</button>
+    </form>
+
+    <section class="results">
+      <p id="summary" class="summary"></p>
+      <div id="results" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="credits">
+    Drinks &amp; photos from <a href="https://www.thecocktaildb.com" target="_blank" rel="noopener">TheCocktailDB</a> ·
+    weather from <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>.
+    Please drink responsibly.
+  </footer>
+
+  <template id="card-template">
+    <article class="card">
+      <div class="photo">
+        <span class="emoji">🍸</span>
+        <img class="real" alt="" loading="lazy" />
+        <span class="strength"></span>
+      </div>
+      <div class="body">
+        <h2 class="title"></h2>
+        <p class="meta"></p>
+        <p class="match"></p>
+        <p class="missing"></p>
+        <ul class="badges"></ul>
+        <details>
+          <summary>How to make it</summary>
+          <ul class="ings"></ul>
+          <ol class="steps"></ol>
+        </details>
+      </div>
+    </article>
+  </template>
+
+  <template id="about-template">
+    <article class="card about">
+      <div class="body">
+        <p class="eyebrow">About me</p>
+        <h2 class="title">Hi, I made Drinkee 👋</h2>
+        <p>I build small, fun things for the web. Drinkee is the friend who knows what to do with half a bottle of gin, a lime and a rainy evening, not a company that wants your email.</p>
+        <details class="promises">
+          <summary>The internet keeps getting worse for the people using it. Drinkee goes the other way. <b>Deshittified, by design.</b> <span class="more-link"></span></summary>
+          <ul>
+            <li><b>No app.</b> Just open the link and pour.</li>
+            <li><b>No sign-up.</b> No email, no phone number, no spam.</li>
+            <li><b>No ads or pop-ups.</b> No sponsored "suggestions" from a vodka brand.</li>
+            <li><b>No tracking.</b> Location is only used for the weather, and only if you tap "Use mine".</li>
+            <li><b>No limits.</b> Hit "Surprise me" as often as you like.</li>
+            <li><b>Free, and it won't get worse.</b> No paywall, no premium tier.</li>
+          </ul>
+        </details>
+        <p>Mostly, it's meant to be fun: try the weird one, mix a round for friends, use up that bottle you bought for one recipe, and find a new favourite.</p>
+        <h3>If you can, chip in</h3>
+        <p>This is the only thing I'll ever ask. Everything here is free and will stay free. If Drinkee made your evening a little better, donate whatever you can, whenever you can.</p>
+        <div class="pay">
+          <a href="https://www.paypal.me/YOUR_HANDLE" target="_blank" rel="noopener noreferrer">Donate with PayPal</a>
+          <a href="https://venmo.com/u/YOUR_HANDLE" target="_blank" rel="noopener noreferrer">Donate with Venmo</a>
+          <a href="upi://pay?pa=YOUR_UPI_ID&amp;pn=YOUR_NAME&amp;cu=INR">Pay with UPI</a>
+        </div>
+        <p class="fine">UPI ID: <b>yourname@bank</b>. The UPI button opens GPay, PhonePe, Paytm or any UPI app on your phone.
+          A donation is a thank-you, not a purchase. There's nothing to unlock, and nobody gets a better version.</p>
+        <p class="fine">Can't right now? Completely fine. Share Drinkee with a friend, raise a glass. That counts too.
+          Hungry? Try <a href="../munchee/index.html">Munchee</a>.</p>
+      </div>
+    </article>
+  </template>
+
+  <script src="js/cocktails.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
