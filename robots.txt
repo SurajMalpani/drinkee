@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drinkee.vayuputra.co/sitemap.xml

@@ -30,7 +30,7 @@ If the download hits SSL errors behind a corporate proxy, prefix the command wit
 - Surprise me follows the same order. Drinks that use all your ingredients always show. Leftover slots (up to 5) are drawn at random from the next-best group, nudged toward your weather, flavor, mood and strength picks.
 - Fine-tune runs top-down: season, then weather, flavors, mood and strength. Changing one resets the defaults below it. For example, summer picks sunny, tropical and citrus, then chill; winter picks cold, warm and spiced, then cozy.
 - With strength on "Any", zero-proof drinks are ranked lower.
-- An "About me" card follows the drinks: the no-app, no-sign-up, no-ads promise and donation links. Before publishing, replace the placeholders in `#about-template` in `index.html`: `YOUR_HANDLE` in the PayPal and Venmo links, and `YOUR_UPI_ID`, `YOUR_NAME` and `yourname@bank` for UPI. [Munchee](../munchee/) has the same card.
+- An "About me" card follows the drinks: the no-app, no-sign-up, no-ads promise and donation links. Before publishing, replace the placeholders in `#about-template` in `index.html`: `YOUR_HANDLE` in the PayPal and Venmo links, and `YOUR_UPI_ID`, `YOUR_NAME` and `yourname@bank` for UPI. [Munchee](https://munchee.vayuputra.co/) has the same card.
 
 ## Notes
 
