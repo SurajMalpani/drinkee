@@ -84,7 +84,6 @@
   const summaryEl = document.getElementById("summary");
   const resultsEl = document.getElementById("results");
   const template = document.getElementById("card-template");
-  const aboutCard = document.getElementById("about-template").content.firstElementChild.cloneNode(true);
 
   const have = new Set();
   let lastSurprise = new Set();
@@ -227,7 +226,6 @@
       : have.size ? ` with your ${[...have][0]}` : "";
     summaryEl.textContent = `🎲 ${picks.length} surprise pick${picks.length > 1 ? "s" : ""}${using}. Hit “Surprise me” again to reshuffle.`;
     picks.forEach((s, i) => resultsEl.appendChild(renderCard(s, i === 0)));
-    resultsEl.appendChild(aboutCard);
   }
 
   function renderCard(s, featured) {
@@ -325,7 +323,6 @@
     const first = spirits.length ? ` ${spirits.join(" & ")} drinks first.` : " Best match first.";
     summaryEl.textContent = `${results.length} pour${results.length > 1 ? "s" : ""}${mood} on a ${weatherEl.selectedOptions[0].text.replace(/^\S+\s/, "").toLowerCase()} ${prefs.season} day.${first}`;
     results.forEach((s, i) => resultsEl.appendChild(renderCard(s, i === 0)));
-    resultsEl.appendChild(aboutCard);
   }
 
   function seasonFor(date, latitude = 1) {
