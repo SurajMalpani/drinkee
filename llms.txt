@@ -1,0 +1,24 @@
+# Drinkee
+
+> What should I drink? Drinkee suggests cocktails from the ingredients behind your bar, or from the weather, your mood, and how strong you want it.
+
+Live: https://drinkee.vayuputra.co/
+
+## Features
+
+- Cocktail ideas ranked by how many of your ingredients they use
+- Surprise me: five drinks built around one or two ingredients
+- Mix me something: recommendations by season, live local weather, flavor, mood, and strength
+- Estimated alcohol strength for each drink
+- Recipes from TheCocktailDB
+
+## Useful for
+
+- Picking a cocktail to make with the bottles you have
+- Finding a drink that suits the weather or the occasion
+- Discovering new cocktails around a favorite spirit
+
+## About
+
+- Free, no sign-up, nothing to install; runs entirely in your browser.
+- Made by [Suraj Malpani](https://surajmalpani.github.io/), published by [Vayuputra](https://vayuputra.co/), which lists all its free tools.
